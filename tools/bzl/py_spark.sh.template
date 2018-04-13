@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [[ -z "${SPARK_HOME}" ]]; then
+    # Assume that spark-submit is already in PATH
+    echo "Cannot find \$SPARK_HOME. Assuming that spark-submit is in PATH"
+    SPARK_SUBMIT="spark-submit"
+else
+    SPARK_SUBMIT="${SPARK_HOME}/bin/spark-submit"
+fi
+
+# Work out environment
+if [ -d "$0.runfiles" ]; then
+    PREFIX="$0.runfiles/com_sparkel/"
+elif [[ $0 =~ "(.*\.runfiles)/.*" ]]; then
+    PREFIX="${BASH_REMATCH[1]}/com_sparkel/"
+else
+    echo "Cannot find .runfiles directory. Assuming running on EMR cluster."
+    PREFIX=''
+fi
+
+COMMAND="$SPARK_SUBMIT --py-files ${PREFIX}%zip_file% $@"
+echo "Running Spark app with $COMMAND"
+PYTHONPATH="." $COMMAND

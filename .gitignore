@@ -1,0 +1,50 @@
+# use glob syntax.
+syntax: glob
+
+.DS_Store
+/**/.DS_Store
+/**/*.jar
+/bazel-*
+
+*.ser
+*.class
+*~
+*.bak
+#*.off
+*.old
+
+# eclipse conf file
+.settings
+.classpath
+.project
+.manager
+.scala_dependencies
+
+# idea
+.idea
+*.iml
+
+# building
+target
+null
+tmp*
+dist
+test-output
+build.log
+
+# other scm
+.svn
+.CVS
+.hg*
+
+# switch to regexp syntax.
+#  syntax: regexp
+#  ^\.pc/
+
+*.pyc
+/.idea
+/dist
+/*.egg-info
+/venv
+
+.gitmessage.txt
