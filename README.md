@@ -52,9 +52,9 @@ bazel run core/python/sparkel/spark_apps:package -- core/python/sparkel/spark_ap
 
 Look at the file `core/python/sparkel/spark_apps/demo_spark_app.py`
 It imports function from `core/python/sparkel/nlp`
-It have a small issue/bug, let figure out by yourself ;)
+It has a small issue/bug, let figure out by yourself ;)
 
 
-So you can play around with them, if have any issues, just report here or invite me coffee,tea or tea-milk :D if you live in HCM city.
+So you can play around with them, if have any issues, just report here or invite me coffee, tea or tea-milk :D if you live in HCM city.
 
-If I have time, will write a article about this bazel build structure later. 
+If I have time, will write an article about this bazel build structure later. 
